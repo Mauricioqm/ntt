@@ -1,0 +1,14 @@
+.bold {
+  font-weight: bold;
+}
+
+.flag {
+    /* background: red; */
+    height: auto;
+    width: 420px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 20%;
+    border: 1px solid;
+}    

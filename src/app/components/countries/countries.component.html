@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <section class="search__container">
+        <div class="serach__name">
+          <div class="input-wrapper">
+            <input type="search" class="input" placeholder="Search" [(ngModel)]="query">
+            <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="offset-4 col-4 float-rigth">
+      <select class="input" name="miselect" [(ngModel)]="region" placeholder="Region">
+        <option [value]="continente" *ngFor="let continente of continentes">{{continente}}</option>
+      </select>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 mx-auto my-5" *ngFor="let pais of paises | filtrarPais:query | filtrarContinente:region">
+      <div class="card-columns">
+        <div class="card animated fadeIn fast">
+          <img [src]="pais.flag" class="card-img-top" routerLink="/country/{{pais.name}}" [alt]="pais.name"
+            height="150" />
+          <div class="card-body">
+            <h3 class="card-title">{{ pais.name }}</h3>
+            <p class="card-text">Population: {{ pais.population }}</p>
+            <p class="card-text">Region: {{ pais.region }}</p>
+            <p class="card-text">Capital: {{ pais.capital }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="pages = $event">
+    </pagination-controls> -->
+  </div>
+</div>

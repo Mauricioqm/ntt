@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="card mt-4">
+    <div class="col-3 mt-4">
+      <button routerLink="/" class="btn btn-light"><i class="fa-solid fa-arrow-left-long"></i>Back</button>
+    </div>
+      <div class="no-gutters row">
+        <div class="col-md-6">
+          <img [src]="pais.flag" class="flag" [alt]="pais.name">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="row">
+              <h1 class="bold">{{pais.name}}</h1>
+              <div class="col-md-6">
+                <h5 class="card-title">Native Name: {{ pais.nativeName }}</h5>
+                <h5 class="card-title">Population: {{ pais.population }}</h5>
+                <h5 class="card-title">Region: {{ pais.region }}</h5>
+                <h5 class="card-title">Sub Region: {{ pais.subregion }}</h5>
+                <h5 class="card-title">Capital: {{ pais.capital }}</h5>
+                <!-- <p class="card-text"><small class="text-muted">Primera aparición: en {{ hero .dateFirstAppearance | date: 'y' }} publicado en {{ hero .firstAppearance | lowercase }} </small></p> -->
+              </div>
+              <div class="col-md-6">
+                <h5 class="card-title">Top Level Domain: {{ pais.topLevelDomain }}</h5>
+                <h5 class="card-title">Currencies: {{ pais.currencies[0].name }}</h5>
+              </div>
+              <p></p>
+              <p></p>
+              <p></p>
+              <h5 class="card-title">Border Countries: {{ pais.borders }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
